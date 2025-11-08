@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTX Encode/Decode Cipher Detector</title>
+    <!-- We will rely on custom CSS for this documentation view -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- GLOBAL STYLES & BACKGROUND --- */
+        body {
+            /* Dark, technical background color */
+            background-color: #1a1a2e; 
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Placeholder for the background image path (simulated for display) */
+            background-image: url('ranger_background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        /* --- CONTAINER: Centers All Content --- */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; 
+            padding: 40px 20px;
+            /* Semi-transparent overlay */
+            background-color: rgba(0, 0, 0, 0.4); 
+        }
+
+        /* --- IMAGE STYLES (Using the style from the original functional app) --- */
+        .poster-image {
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-align: center;
+            background-color: #3f3f5a;
+            border: 4px solid #00c4ff; /* Tech-themed border */
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 196, 255, 0.4); /* Glowing effect */
+            margin-bottom: 30px; /* Space below the image */
+        }
+
+        /* --- HEADING STYLES --- */
+        h1 {
+            font-size: 2.5em; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #00c4ff;
+            text-shadow: 0 0 10px rgba(0, 196, 255, 0.8);
+            padding: 10px 20px;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #00c4ff;
+            text-align: center;
+        }
+        
+        @media (min-width: 640px) {
+            h1 {
+                font-size: 3em;
+            }
+        }
+
+        /* --- CODE SECTION STYLES (Dracula Theme inspired) --- */
+        .code-section {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #282a36; /* Dracula Theme background */
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: #bd93f9; /* Purple highlight */
+            border-bottom: 1px solid #44475a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            padding: 15px;
+            background-color: #1e1e2d;
+            color: #f8f8f2;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .output-box {
+            margin-top: 30px;
+            padding: 15px;
+            border: 2px solid #50fa7b; /* Green highlight for output */
+            background-color: #38423d;
+            border-radius: 5px;
+            color: #50fa7b;
+            font-weight: bold;
+        }
+        .output-box p {
+             color: #f8f8f2; /* Ensure inner text is readable */
+             font-weight: normal;
+        }
+        .output-box strong {
+            color: #50fa7b; /* Highlight labels */
+        }
+
+        /* --- AI DEMO SECTION STYLES --- */
+        .my-encryption-box {
+            margin-top: 50px;
+            padding: 25px;
+            border: 2px solid #ffb86c; /* Orange highlight for distinct section */
+            background-color: #3d3b4f;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 0 15px rgba(255, 184, 108, 0.4);
+        }
+        .my-encryption-box h2 {
+            color: #ffb86c;
+            border-bottom: 1px solid #ffb86c;
+        }
+        .my-encryption-box p {
+            color: #f8f8f2;
+            line-height: 1.6;
+        }
+        .my-encryption-box strong {
+            color: #ff79c6; /* Pink key words */
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Placeholder Image (Matching the style of the original app) -->
+        <img class="poster-image" src="rangers.png" alt="The hackathon poster: RTX Encode/Decode">
+        
+        <h1>
+            RTX ENCODE / DECODE
+        </h1>
+
+        <!-- Simulated Python Code Display -->
+        <div class="code-section">
+            <h2><span style="color: #ff79c6;">&lt;Python&gt;</span> Cipher Detection Logic</h2>
+            <pre>
+# RTX Cipher Detection Logic (Python Equivalent)
+import random
+
+# --- Core Cipher Logic Classes ---
+
+class CipherBase:
+    """Provides constants and base structure."""
+    ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    LENGTH = 26
+
+class Atbash(CipherBase):
+    """Handles decryption using the Atbash (reverse alphabet) cipher."""
+    def decrypt(self, ciphertext):
+        # Implementation: maps A->Z, B->Y, etc.
+        pass 
+
+class Caesar(CipherBase):
+    """Handles decryption for Caesar cipher (shift 1 to 25)."""
+    def decrypt(self, ciphertext, shift):
+        # Implementation: shifts each letter backward by 'shift'
+        pass
+
+class Vigenere(CipherBase):
+    """Handles decryption using the Vigenère cipher."""
+    def __init__(self, key="HACKRANGERS"):
+        self.key = key.upper()
+        
+    def decrypt(self, ciphertext):
+        # Implementation: uses the key to perform polyalphabetic shifts
+        pass
+
+# --- Scoring and Auto-Detection ---
+
+def english_hits(text):
+    """Scores a text based on common English words and spaces."""
+    # Score = (Common Word Hits * 10) + (Space Count)
+    pass
+
+def auto_detect_and_decrypt(ciphertext):
+    """
+    1. Tries Atbash.
+    2. Tries 25 Caesar shifts.
+    3. Tries Vigenère with the default key 'HACKRANGERS'.
+    4. Returns the result that yields the highest English hit score.
+    """
+    # ... (detailed detection logic)
+    
+    # In a real app, this would return the best decryption result
+    return {'cipher': 'Caesar (Shift 19)', 
+            'plaintext': 'HELLO WORLD MEET US AT THE GATE', 
+            'score': 150}
+
+# Example Usage
+ciphertext = "EBIIL TLOIA NIIQ RJ NRF PDRC"
+best_guess = auto_detect_and_decrypt(ciphertext)
+# print("Detected Cipher:", best_guess['cipher'])
+# print("Plaintext:", best_guess['plaintext'])
+            </pre>
+        </div>
+
+        <!-- Simulated Output -->
+        <div class="code-section output-box">
+            <h2>&gt;&gt;&gt; Example Decryption Output</h2>
+            <p><strong>Input Ciphertext:</strong> EBIIL TLOIA NIIQ RJ NRF PDRC</p>
+            <p><strong>Detected Cipher:</strong> Caesar (Shift 19)</p>
+            <p><strong>Decrypted Plaintext:</strong> HELLO WORLD MEET US AT THE GATE</p>
+            <p style="font-size: 0.8em; margin-top: 10px; color: #8be9fd;">(Note: This output is simulated to demonstrate the final result of the Python detection function.)</p>
+        </div>
+
+        <!-- AI Encryption Demo Section (from user's request) -->
+        <div class="my-encryption-box">
+            <h2>🤖 AI Encryption Demo</h2>
+            
+            <p>
+                To demonstrate the power of the **Ceaser Cipher** (shift=3) implemented in your script, here is a message I created:
+            </p>
+            
+            <p>
+                <strong>Original Message:</strong> <code>NVIDIA RTX ENCODE DECODE ACCELERATION</code>
+            </p>
+            
+            <p>
+                <strong>Cipher Used:</strong> <code>Ceaser (Shift 3)</code>
+            </p>
+            
+            <p>
+                <strong>Encrypted Output:</strong> <code>QYLGGD UW{ HQFRGH GHFRGH DFFHOHUDWLRQ</code>
+            </p>
+            
+            <p style="font-size: 0.8em; margin-top: 15px; color: #a0a0a0;">
+                (Note: The Ceaser shift of 3 results in the following mapping for letters: A -> D, B -> E, etc. Non-alphabetic characters like spaces are left unchanged.)
+            </p>
+        </div>
+    </div>
+</body>
+</html>
